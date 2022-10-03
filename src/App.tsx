@@ -16,7 +16,7 @@ function App(): JSX.Element {
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((data) =>
       setState(
-        data.data.map((el) => {
+        data.data.map((el: any) => {
           return {
             ...el,
             area: parseFloat((el.area / 1000).toFixed(2)),
