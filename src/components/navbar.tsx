@@ -1,7 +1,7 @@
 interface Props {
   setSortAlgo: React.Dispatch<React.SetStateAction<"area" | "population">>;
 }
-
+import { Link } from "react-router-dom";
 const MyNavbar: React.FC<Props> = ({ setSortAlgo }) => {
   return (
     <header className='text-gray-600 body-font'>
@@ -22,10 +22,12 @@ const MyNavbar: React.FC<Props> = ({ setSortAlgo }) => {
           <span className='ml-3 text-xl'>Country Rank</span>
         </a>
         <nav className='md:ml-auto flex flex-wrap items-center text-base justify-center'>
-          <a className='mr-5 hover:text-gray-900'>First Link</a>
-          <a className='mr-5 hover:text-gray-900'>Second Link</a>
-          <a className='mr-5 hover:text-gray-900'>Third Link</a>
-          <a className='mr-5 hover:text-gray-900'>Fourth Link</a>
+          <Link to='/'>
+            <span className='mr-5 hover:text-gray-900'>Home</span>
+          </Link>
+          <Link to='graph'>
+            <span className='mr-5 hover:text-gray-900'>Graph</span>
+          </Link>
         </nav>
         <button
           className='inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0'
